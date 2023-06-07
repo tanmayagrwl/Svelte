@@ -1,9 +1,12 @@
 <script>
 	const name = 'Batman'
+	const channel = '<b>codevolution</b>'
 </script>
 
 <main>
 	<h1>Hello {name}</h1>
+	<div>{@html channel}</div>
+
 </main>
 
 <style>
