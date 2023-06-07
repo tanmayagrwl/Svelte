@@ -1,12 +1,15 @@
 <script>
 	const name = 'Batman'
 	const channel = '<b>codevolution</b>'
+	const headingId = 'heading'
+	const disabled = true
 </script>
 
 <main>
 	<h1>Hello {name}</h1>
 	<div>{@html channel}</div>
-
+	<h2 id={headingId}>This is a heading</h2>
+	<button {disabled}>Bind</button>
 </main>
 
 <style>
