@@ -1,36 +1,19 @@
 <script>
-	const names= ['bruce', 'clark', 'diana']
-	const age= ['11', '12', '13']
-	const deets = [
-		{first : 'abc', age: 11},
-		{first : 'ssd', age: 121},
-		{first : 'sd', age: 121},
-	]
+	let count = 0
+	function handleClick(event,stepsize){
+		console.log(event)
+		count+=stepsize
+	}
 </script>
 
 <main>
-	{#each deets as deet,index(deet.first)}
-	<h1>{index+1} {deet.first} {deet.age}</h1>
-	{/each}
+	<button on:click={()=> (count = count +1)}>count =  {count}</button>
+	<button on:click={(event)=>handleClick(event,5)}>count =  {count}</button>
+	<button on:click={(event)=>handleClick(event,10)}>count =  {count}</button>
 </main>
 
+
 <style>
-	.underline{
-		text-decoration:underline ;
-	}
-
-	.danger{
-		color: red;
-	}
-
-	.success{
-		color: olive;
-	}
-
-	.promoted{
-		font-style: italic;
-
-	}
 
 	main {
 		text-align: center;
