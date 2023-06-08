@@ -9,7 +9,7 @@
 </script>
 
 <main>
-	{#each deets as deet,index}
+	{#each deets as deet,index(deet.first)}
 	<h1>{index+1} {deet.first} {deet.age}</h1>
 	{/each}
 </main>
