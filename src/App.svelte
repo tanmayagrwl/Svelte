@@ -3,9 +3,14 @@
 	const channel = '<b>codevolution</b>'
 	const headingId = 'heading'
 	const disabled = true
+	const status = 'success'
+	const isPromoted = true
 </script>
 
 <main>
+	<h2 class="underline">Underlined text</h2>
+	<h2 class={status}>status</h2>
+	<h2 class={isPromoted ? 'promoted' : 'danger'}>Movie title</h2>
 	<h1>Hello {name}</h1>
 	<div>{@html channel}</div>
 	<h2 id={headingId}>This is a heading</h2>
@@ -13,6 +18,23 @@
 </main>
 
 <style>
+	.underline{
+		text-decoration:underline ;
+	}
+
+	.danger{
+		color: red;
+	}
+
+	.success{
+		color: olive;
+	}
+
+	.promoted{
+		font-style: italic;
+
+	}
+
 	main {
 		text-align: center;
 		padding: 1em;
