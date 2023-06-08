@@ -1,20 +1,18 @@
 <script>
-	const name = 'Batman'
-	const channel = '<b>codevolution</b>'
-	const headingId = 'heading'
-	const disabled = true
-	const status = 'success'
-	const isPromoted = true
+	const num = -3
 </script>
 
 <main>
-	<h2 class="underline">Underlined text</h2>
-	<h2 class={status}>status</h2>
-	<h2 class={isPromoted ? 'promoted' : 'danger'}>Movie title</h2>
-	<h1>Hello {name}</h1>
-	<div>{@html channel}</div>
-	<h2 id={headingId}>This is a heading</h2>
-	<button {disabled}>Bind</button>
+	{#if num==0}
+		<h2>The number is zero</h2>
+	{:else if num<0}
+		 <h2>Num is negetive</h2>
+	{:else if num>0}
+		 <h2>Num is positive</h2>
+	{:else }
+	<h2>The number is not</h2>
+	{/if}
+
 </main>
 
 <style>
