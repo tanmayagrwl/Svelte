@@ -1,18 +1,17 @@
 <script>
-	const num = -3
+	const names= ['bruce', 'clark', 'diana']
+	const age= ['11', '12', '13']
+	const deets = [
+		{first : 'abc', age: 11},
+		{first : 'ssd', age: 121},
+		{first : 'sd', age: 121},
+	]
 </script>
 
 <main>
-	{#if num==0}
-		<h2>The number is zero</h2>
-	{:else if num<0}
-		 <h2>Num is negetive</h2>
-	{:else if num>0}
-		 <h2>Num is positive</h2>
-	{:else }
-	<h2>The number is not</h2>
-	{/if}
-
+	{#each deets as deet,index}
+	<h1>{index+1} {deet.first} {deet.age}</h1>
+	{/each}
 </main>
 
 <style>
