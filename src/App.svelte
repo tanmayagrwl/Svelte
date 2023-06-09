@@ -1,11 +1,20 @@
 <script>
+  import { group_outros } from "svelte/internal";
+
 	const formValues = {
 		name : '',
 		profileSummary: '',
 		country:'',
 		jobLocation : [],
+		remoteWork : false,
+		skillSet : [],
+		yearsOfExperience:'',
 	}
+	function submitForm(event){
+		event.preventDefault()
+		console.log(formValues)
 
+	}
 </script>
 
 <main>
@@ -14,7 +23,7 @@
 			{JSON.stringify(formValues,null,2)}
 		</pre>
 	</div>
-	<form >
+	<form on:submit={submitForm}>
 		<div>
 			<label for="name">Name</label>
 			<input type="text" id="name" bind:value={formValues.name}/>
@@ -40,6 +49,35 @@
 				<option value="Vietnam">Vietnam</option>
 				<option value="Singapore">Singapore</option>	
 			</select>
+		</div>
+			<input type="checkbox" name="remoteWork" id="remoteWork" bind:checked={formValues.remoteWork}>
+			<label for="remoteWork">Open to remote work</label>
+		<div>
+
+			<div>
+				<label for="skillSet" >Skill Set</label>
+				<input type="checkbox" name="html" id="html" value="html" bind:group={formValues.skillSet}/>
+				<label for="html">HTML</label>
+				<input type="checkbox" name="css" id="css" value="css" bind:group={formValues.skillSet} />
+				<label for="html">CSS</label>
+				<input type="checkbox" name="Js" id="Js" value="Js" bind:group={formValues.skillSet}/>
+				<label for="html">Js</label>
+			</div>
+
+			<div>
+				<label for="years-of-experience" >Years of Experience</label>
+				<input type="radio" name="html" id="0-2" value="0-2" bind:group={formValues.yearsOfExperience}/>
+				<label for="html">0-2</label>
+				<input type="radio" name="css" id="3-5" value="3-5" bind:group={formValues.yearsOfExperience} />
+				<label for="html">3-5</label>
+				<input type="radio" name="Js" id="6+" value="6+" bind:group={formValues.yearsOfExperience}/>
+				<label for="html">6+</label>
+			</div>
+
+			<div>
+				<button>Submit</button>
+			</div>
+
 		</div>
 	</form>
 </main>
